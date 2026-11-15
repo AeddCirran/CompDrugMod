@@ -1,0 +1,49 @@
+normalizations   normalization        f1     kappa
+0          none  0.800356  0.587469
+1      standard  0.799468  0.584563
+2        minmax  0.792167  0.570993
+3            l2  0.775366  0.533911
+4        robust  0.795213  0.575311
+selectors         selector  n_features        f1     kappa
+0            all         217  0.810643  0.607512
+1       var_0.01         186  0.806924  0.600217
+2         mi_k50          50  0.789122  0.565607
+3          f_k50          50  0.806181  0.596190
+4  sfm_rf_median         109  0.811671  0.608233
+
+RandomForest
+              precision    recall  f1-score   support
+
+ non-mutagen       0.75      0.84      0.79      1002
+     mutagen       0.84      0.76      0.80      1173
+
+    accuracy                           0.79      2175
+   macro avg       0.80      0.80      0.79      2175
+weighted avg       0.80      0.79      0.79      2175
+
+
+LogReg
+              precision    recall  f1-score   support
+
+ non-mutagen       0.67      0.77      0.72      1002
+     mutagen       0.78      0.68      0.72      1173
+
+    accuracy                           0.72      2175
+   macro avg       0.73      0.73      0.72      2175
+weighted avg       0.73      0.72      0.72      2175
+
+
+HistGB
+              precision    recall  f1-score   support
+
+ non-mutagen       0.75      0.80      0.78      1002
+     mutagen       0.82      0.77      0.80      1173
+
+    accuracy                           0.79      2175
+   macro avg       0.79      0.79      0.79      2175
+weighted avg       0.79      0.79      0.79      2175
+
+models           model        f1     kappa
+0  RandomForest  0.798021  0.588243
+1        LogReg  0.724374  0.446300
+2        HistGB  0.795784  0.571903
