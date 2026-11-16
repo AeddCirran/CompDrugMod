@@ -1,15 +1,20 @@
-normalizations   normalization        f1     kappa
-0          none  0.800356  0.587469
-1      standard  0.799468  0.584563
-2        minmax  0.792167  0.570993
-3            l2  0.775366  0.533911
-4        robust  0.795213  0.575311
-selectors         selector  n_features        f1     kappa
-0            all         217  0.810643  0.607512
-1       var_0.01         186  0.806924  0.600217
-2         mi_k50          50  0.789122  0.565607
-3          f_k50          50  0.806181  0.596190
-4  sfm_rf_median         109  0.811671  0.608233
+Подбор нормализации:
+        Нормализация        F1  Cohen’s kappa
+0              none  0.801778       0.590196
+1          standard  0.803556       0.593872
+2            minmax  0.807795       0.600992
+3                l2  0.785396       0.557246
+4            robust  0.802661       0.590967
+5  power_yeojohnson  0.807812       0.602055
+Подбор отбора признаков:
+   Отбор признаков  Кол-во признаков        F1  Cohen’s kappa
+0             all               217  0.810643       0.607512
+1        var_0.05               164  0.805149       0.596541
+2          mi_k50               100  0.797333       0.581008
+3           f_k50               100  0.811195       0.609464
+4             rfe               100  0.806723       0.598146
+5   sfm_rf_median               109  0.811671       0.608233
+Результаты моделей на тесте:
 
 RandomForest
               precision    recall  f1-score   support
@@ -33,17 +38,31 @@ LogReg
 weighted avg       0.73      0.72      0.72      2175
 
 
+SVC
+              precision    recall  f1-score   support
+
+ non-mutagen       0.63      0.72      0.67      1002
+     mutagen       0.73      0.63      0.68      1173
+
+    accuracy                           0.67      2175
+   macro avg       0.68      0.68      0.67      2175
+weighted avg       0.68      0.67      0.67      2175
+
+
 HistGB
               precision    recall  f1-score   support
 
- non-mutagen       0.75      0.80      0.78      1002
+ non-mutagen       0.75      0.81      0.78      1002
      mutagen       0.82      0.77      0.80      1173
 
     accuracy                           0.79      2175
    macro avg       0.79      0.79      0.79      2175
 weighted avg       0.79      0.79      0.79      2175
 
-models           model        f1     kappa
-0  RandomForest  0.798021  0.588243
-1        LogReg  0.724374  0.446300
-2        HistGB  0.795784  0.571903
+Сравнение моделей:
+          Модель        F1  Cohen’s kappa
+0  RandomForest  0.798021       0.588243
+1        LogReg  0.724374       0.446300
+2           SVC  0.675491       0.349475
+3        HistGB  0.798593       0.578439
+Ансамбль 0.7998232434821034 0.5833729758529484
